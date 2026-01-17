@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="zh-CN" itemscope itemtype="https://schema.org/WebPage">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Primary Meta Tags -->
+  <title>蓝鲸CMDB深度定制 | 企业级权限管理与OIDC单点登录方案 | BlueKing CMDB Customization</title>
+  <meta name="title" content="蓝鲸CMDB深度定制 | 企业级权限管理与OIDC单点登录方案" />
+  <meta name="description" content="专业的蓝鲸CMDB深度定制服务：独立用户管理中心、精细化RBAC角色权限、OIDC/OAuth2单点登录集成、全新Vue.js管理界面。支持Kubernetes/Helm部署，Golang后端扩展。适用于企业级IT资产配置管理场景。" />
+  <meta name="keywords" content="蓝鲸CMDB, BlueKing CMDB, CMDB定制, CMDB customization, 权限管理, RBAC, OIDC, OAuth2, 单点登录, SSO, 角色管理, 用户管理, Vue.js, Golang, Kubernetes, Helm, IT资产管理, 配置管理, ITIL, DevOps" />
+  <meta name="author" content="Jason Zhang" />
+  <meta name="creator" content="Jason Zhang" />
+  <meta name="publisher" content="Jason Zhang" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="subject" content="蓝鲸CMDB企业级定制开发服务" />
+  <meta name="abstract" content="提供蓝鲸CMDB的深度定制方案，包括用户管理、角色权限、OIDC认证等企业级功能扩展。" />
+  <meta name="classification" content="Business, Technology, Software Development" />
+  <meta name="category" content="IT资产管理, 配置管理数据库, 企业软件定制" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="distribution" content="global" />
+  <meta name="rating" content="general" />
+  <meta name="revisit-after" content="7 days" />
+
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.title" content="蓝鲸CMDB深度定制 - 企业级权限与用户管理方案" />
+  <meta name="DC.creator" content="Jason Zhang" />
+  <meta name="DC.subject" content="CMDB; 配置管理; 权限管理; OIDC; 企业软件" />
+  <meta name="DC.description" content="基于蓝鲸CMDB的企业级深度定制方案，提供独立用户管理、精细化权限控制、OIDC单点登录等功能。" />
+  <meta name="DC.publisher" content="Jason Zhang" />
+  <meta name="DC.type" content="Service" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="zh-CN" />
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="CN" />
+  <meta name="geo.placename" content="China" />
+  <meta name="ICBM" content="39.9042, 116.4074" />
+
+  <!-- Canonical & Alternate Languages -->
+  <link rel="canonical" href="https://cmdb.junxinzhang.com/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://cmdb.junxinzhang.com/" />
+  <link rel="alternate" hreflang="en" href="https://cmdb.junxinzhang.com/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://cmdb.junxinzhang.com/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cmdb.junxinzhang.com/" />
+  <meta property="og:site_name" content="蓝鲸CMDB深度定制 | BlueKing CMDB Customization" />
+  <meta property="og:title" content="蓝鲸CMDB深度定制 | 企业级权限管理与OIDC单点登录方案" />
+  <meta property="og:description" content="专业的蓝鲸CMDB深度定制服务：独立用户管理中心、精细化RBAC角色权限、OIDC/OAuth2单点登录集成、全新Vue.js管理界面。" />
+  <meta property="og:image" content="https://cmdb.junxinzhang.com/assets/screenshot.png" />
+  <meta property="og:image:secure_url" content="https://cmdb.junxinzhang.com/assets/screenshot.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="蓝鲸CMDB深度定制界面截图 - 用户管理与权限配置" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="article:author" content="Jason Zhang" />
+  <meta property="article:publisher" content="https://junxinzhang.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Jasonz9788" />
+  <meta name="twitter:creator" content="@Jasonz9788" />
+  <meta name="twitter:title" content="蓝鲸CMDB深度定制 | 企业级权限管理方案" />
+  <meta name="twitter:description" content="专业CMDB定制：独立用户管理、精细化RBAC权限、OIDC单点登录、Vue.js管理界面。支持Kubernetes部署。" />
+  <meta name="twitter:image" content="https://cmdb.junxinzhang.com/assets/screenshot.png" />
+  <meta name="twitter:image:alt" content="蓝鲸CMDB深度定制界面截图" />
+
+  <!-- LinkedIn -->
+  <meta property="linkedin:owner" content="Jason Zhang" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+
+  <!-- Structured Data: Comprehensive Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://junxinzhang.com/#organization",
+        "name": "Jason Zhang - Software Development",
+        "alternateName": ["JustJason", "Jason Zhang Tech"],
+        "url": "https://junxinzhang.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cmdb.junxinzhang.com/assets/logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://github.com/junxinzhang",
+          "https://x.com/Jasonz9788"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "jason2023zhang@gmail.com",
+          "contactType": "customer service",
+          "availableLanguage": ["Chinese", "English"]
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://junxinzhang.com/#person",
+        "name": "Jason Zhang",
+        "alternateName": "JustJason",
+        "url": "https://junxinzhang.com",
+        "jobTitle": "Software Engineer",
+        "knowsAbout": ["CMDB", "Golang", "Vue.js", "Kubernetes", "OIDC", "DevOps"],
+        "sameAs": [
+          "https://github.com/junxinzhang",
+          "https://x.com/Jasonz9788"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://cmdb.junxinzhang.com/#website",
+        "url": "https://cmdb.junxinzhang.com/",
+        "name": "蓝鲸CMDB深度定制",
+        "alternateName": "BlueKing CMDB Customization",
+        "description": "专业的蓝鲸CMDB深度定制服务，提供企业级权限管理与OIDC单点登录方案",
+        "publisher": { "@id": "https://junxinzhang.com/#organization" },
+        "inLanguage": ["zh-CN", "en"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://cmdb.junxinzhang.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://cmdb.junxinzhang.com/#webpage",
+        "url": "https://cmdb.junxinzhang.com/",
+        "name": "蓝鲸CMDB深度定制 | 企业级权限管理与OIDC单点登录方案",
+        "description": "专业的蓝鲸CMDB深度定制服务：独立用户管理中心、精细化RBAC角色权限、OIDC/OAuth2单点登录集成、全新Vue.js管理界面",
+        "isPartOf": { "@id": "https://cmdb.junxinzhang.com/#website" },
+        "about": { "@id": "https://cmdb.junxinzhang.com/#software" },
+        "author": { "@id": "https://junxinzhang.com/#person" },
+        "inLanguage": "zh-CN",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-01-18",
+        "breadcrumb": { "@id": "https://cmdb.junxinzhang.com/#breadcrumb" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://cmdb.junxinzhang.com/assets/screenshot.png"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cmdb.junxinzhang.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://cmdb.junxinzhang.com/"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://cmdb.junxinzhang.com/#software",
+        "name": "蓝鲸CMDB深度定制",
+        "alternateName": "BlueKing CMDB Custom Edition",
+        "description": "基于蓝鲸CMDB的企业级深度定制版本，提供独立用户管理中心、精细化RBAC角色权限体系、OIDC/OAuth2单点登录集成、全新Vue.js管理界面",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "IT Asset Management",
+        "operatingSystem": "Web, Linux, Kubernetes",
+        "softwareVersion": "3.x",
+        "releaseNotes": "https://junxinzhang.com/bk-cmdb/",
+        "screenshot": [
+          "https://cmdb.junxinzhang.com/assets/screenshot.png",
+          "https://cmdb.junxinzhang.com/assets/screenshot01.png"
+        ],
+        "featureList": [
+          "独立用户管理中心 - 集中化用户视图，支持用户创建、编辑、查询、禁用",
+          "精细化RBAC角色权限 - 自定义角色，精确到模型、实例、业务与功能级别",
+          "OIDC/OAuth2单点登录 - 支持Authing、Okta等统一认证服务",
+          "全新Vue.js管理界面 - 从头打造的现代化前端交互",
+          "Golang后端服务扩展 - 2000+行核心业务逻辑",
+          "Helm/Kubernetes部署支持 - 容器化交付方案"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "CNY",
+          "availability": "https://schema.org/InStock"
+        },
+        "author": { "@id": "https://junxinzhang.com/#person" },
+        "provider": { "@id": "https://junxinzhang.com/#organization" },
+        "keywords": ["CMDB", "蓝鲸", "BlueKing", "权限管理", "OIDC", "RBAC", "Kubernetes"],
+        "programmingLanguage": ["Golang", "JavaScript", "Vue.js"],
+        "codeRepository": "https://github.com/junxinzhang/bk-cmdb"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://cmdb.junxinzhang.com/#service",
+        "name": "蓝鲸CMDB定制开发服务",
+        "alternateName": "BlueKing CMDB Customization Service",
+        "description": "提供蓝鲸CMDB的企业级深度定制开发服务，包括用户管理、权限控制、OIDC集成、界面重构等",
+        "serviceType": "Software Development",
+        "provider": { "@id": "https://junxinzhang.com/#organization" },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Worldwide"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "CMDB定制服务目录",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "用户管理中心定制",
+                "description": "独立用户管理模块开发，支持用户CRUD、状态管理"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "RBAC权限系统定制",
+                "description": "精细化角色权限控制，支持模型、实例、业务级别权限"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "OIDC/SSO集成",
+                "description": "企业统一认证对接，支持Authing、Okta等"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "前端界面重构",
+                "description": "全新Vue.js管理界面开发"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://cmdb.junxinzhang.com/#howto",
+        "name": "如何实现蓝鲸CMDB深度定制",
+        "description": "从后端到前端的完整定制开发流程",
+        "totalTime": "PT720H",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "后端Golang开发",
+            "text": "新增完整User Management模块与核心API，重构登录流程。包含2000+行核心业务逻辑。",
+            "itemListElement": [
+              {
+                "@type": "HowToDirection",
+                "text": "设计用户管理数据模型"
+              },
+              {
+                "@type": "HowToDirection",
+                "text": "实现用户CRUD API接口"
+              },
+              {
+                "@type": "HowToDirection",
+                "text": "重构认证与授权流程"
+              }
+            ]
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "前端Vue.js开发",
+            "text": "新建用户管理模块、角色管理与权限配置组件。包含7个核心业务组件。",
+            "itemListElement": [
+              {
+                "@type": "HowToDirection",
+                "text": "创建用户管理页面组件"
+              },
+              {
+                "@type": "HowToDirection",
+                "text": "实现角色配置交互"
+              },
+              {
+                "@type": "HowToDirection",
+                "text": "构建权限分配界面"
+              }
+            ]
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "OIDC认证对接",
+            "text": "新增独立认证服务，支持多登录模式与统一认证。可对接Authing、Okta等。"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Helm部署配置",
+            "text": "更新配置与Chart，确保新服务在Kubernetes环境顺利上线。"
+          }
+        ]
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://cmdb.junxinzhang.com/#article",
+        "headline": "蓝鲸CMDB深度定制：企业级权限与用户管理方案",
+        "alternativeHeadline": "BlueKing CMDB Customization: Enterprise Permission and User Management Solution",
+        "description": "详细介绍如何对蓝鲸CMDB进行深度定制，实现独立用户管理、精细化权限控制、OIDC单点登录等企业级功能",
+        "author": { "@id": "https://junxinzhang.com/#person" },
+        "publisher": { "@id": "https://junxinzhang.com/#organization" },
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-01-18",
+        "mainEntityOfPage": { "@id": "https://cmdb.junxinzhang.com/#webpage" },
+        "image": "https://cmdb.junxinzhang.com/assets/screenshot.png",
+        "articleSection": ["技术方案", "CMDB定制", "企业软件"],
+        "keywords": ["蓝鲸CMDB", "CMDB定制", "RBAC", "OIDC", "Vue.js", "Golang"],
+        "proficiencyLevel": "Expert",
+        "dependencies": "蓝鲸CMDB 3.x, Golang 1.20+, Vue.js 2.7+, MongoDB, Kubernetes"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Structured Data (Separate for clarity) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "这套权限系统包含哪些核心模块？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "包含独立用户管理中心、角色与权限配置、OIDC登录集成，以及全新的Vue管理界面。用户管理中心支持用户创建、编辑、查询、禁用等完整流程；角色权限可精确到模型、实例、业务与功能级别的增删改查控制。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "是否支持企业内部认证体系？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "支持。基于OIDC/OAuth2协议，可对接Authing、Okta、Azure AD等主流统一认证服务，实现企业级单点登录（SSO）和统一身份认证。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "这套定制基于什么版本的蓝鲸CMDB？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "基于腾讯蓝鲸CMDB社区版3.x版本进行深度定制。原厂仓库地址：https://github.com/TencentBlueKing/bk-cmdb"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "如何合作或获取定制支持？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以通过邮件(jason2023zhang@gmail.com)或微信(winnielove2020)联系，提供需求说明即可开始评估。支持定制开发、技术咨询、部署支持等多种合作方式。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "支持哪些部署方式？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "支持Kubernetes/Helm容器化部署，也支持传统的物理机或虚拟机部署。提供完整的Helm Chart和部署文档。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "技术栈是什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "后端采用Golang开发，前端使用Vue.js 2.7，数据库为MongoDB，支持Redis缓存。认证采用OIDC/OAuth2协议，部署支持Kubernetes和Helm。"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="antialiased">
+<a href="#main" class="skip-link">跳转到主要内容</a>
+
+<header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-700">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10">
+        <img src="assets/logo.png" alt="BK-CMDB Logo" class="h-6 w-6" loading="eager" />
+      </div>
+      <div class="text-xl font-bold text-white brand-title">蓝鲸CMDB深度定制</div>
+    </div>
+    <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300" role="navigation" aria-label="主导航">
+      <a href="#pain" class="hover:text-cyan-300 transition">痛点</a>
+      <a href="#features" class="hover:text-cyan-300 transition">成果</a>
+      <a href="#architecture" class="hover:text-cyan-300 transition">技术</a>
+      <a href="#case" class="hover:text-cyan-300 transition">案例</a>
+      <a href="#faq" class="hover:text-cyan-300 transition">FAQ</a>
+      <a href="#contact" class="px-4 py-2 border border-cyan-400 text-cyan-300 rounded-md hover:bg-cyan-500/10 transition">联系咨询</a>
+    </nav>
+
+    <button id="menu-btn" class="mobile-menu-btn md:hidden" aria-label="打开导航菜单" aria-expanded="false">
+      <i class="ri-menu-line text-xl text-white"></i>
+    </button>
+
+    <div id="mobile-nav" class="mobile-nav md:hidden text-slate-300 text-sm" role="navigation" aria-label="移动端导航">
+      <a href="#pain">痛点</a>
+      <a href="#features">成果</a>
+      <a href="#architecture">技术</a>
+      <a href="#case">案例</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="text-cyan-300 font-medium">联系咨询</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right" class="order-2 lg:order-1">
+        <div class="badge inline-block animate-slide-in">从0到1的精细化权限体系</div>
+        <h1 class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold hero-gradient leading-tight">
+          让蓝鲸CMDB更安全、更易用
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed">
+          面向企业级场景的深度定制：独立用户管理中心、角色权限指派、OIDC 单点登录与全新 Vue 管理界面，让配置管理更精准、更高效。
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row flex-wrap gap-4">
+          <a href="https://junxinzhang.com/bk-cmdb/" target="_blank" rel="noopener"
+             class="px-6 py-3 rounded-md bg-cyan-500 text-white shadow-lg hover:bg-cyan-600 transition text-center">
+             阅读完整案例
+          </a>
+          <a href="https://github.com/junxinzhang/bk-cmdb" target="_blank" rel="noopener"
+             class="px-6 py-3 rounded-md border border-slate-600 text-slate-200 hover:bg-slate-700/50 transition flex items-center gap-2 justify-center">
+             <i class="ri-github-line"></i> 查看定制仓库
+          </a>
+        </div>
+
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-cyan-300">用户中心</div>
+            <div class="text-xs text-slate-400 mt-1">独立管理</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-amber-400">角色权限</div>
+            <div class="text-xs text-slate-400 mt-1">精细控制</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-cyan-300">OIDC</div>
+            <div class="text-xs text-slate-400 mt-1">单点登录</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-amber-400">Vue UI</div>
+            <div class="text-xs text-slate-400 mt-1">重构界面</div>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-left" class="order-1 lg:order-2">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-amber-400/20 to-coral-400/20 rounded-2xl blur-xl"></div>
+          <div class="hero-orbit"></div>
+
+          <div class="screenshot-carousel relative">
+            <div class="carousel-wrapper">
+              <img src="assets/screenshot.png"
+                   alt="蓝鲸CMDB深度定制界面截图 - 用户管理中心"
+                   width="900"
+                   height="600"
+                   loading="eager"
+                   fetchpriority="high"
+                   class="carousel-image active relative rounded-xl shadow-2xl border border-slate-700 w-full max-w-xl mx-auto"
+                   itemprop="image">
+              <img src="assets/screenshot01.png"
+                   alt="蓝鲸CMDB深度定制界面截图 - 角色权限配置"
+                   width="900"
+                   height="600"
+                   loading="eager"
+                   class="carousel-image relative rounded-xl shadow-2xl border border-slate-700 w-full max-w-xl mx-auto">
+            </div>
+
+            <button class="carousel-btn carousel-prev" aria-label="上一张截图">
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+            <button class="carousel-btn carousel-next" aria-label="下一张截图">
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+
+            <div class="carousel-indicators">
+              <button class="carousel-indicator active" aria-label="截图 1"></button>
+              <button class="carousel-indicator" aria-label="截图 2"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pain" class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center">你可能正在遇到这些问题</h2>
+    <p class="text-slate-600 text-center mt-4 max-w-2xl mx-auto">文章中真实的痛点场景，驱动了这次深度定制。</p>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <div class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-amber-50">
+          <i class="ri-shield-user-line text-2xl text-amber-500"></i>
+        </div>
+        <div>
+          <h3 class="font-medium text-slate-900">权限粒度太粗</h3>
+          <p class="mt-2 text-slate-600 text-sm">默认仅有一个用户，权限无法细分，企业级安全管控难以落地。</p>
+        </div>
+      </div>
+      <div class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-cyan-50">
+          <i class="ri-team-line text-2xl text-cyan-600"></i>
+        </div>
+        <div>
+          <h3 class="font-medium text-slate-900">缺少用户与角色管理</h3>
+          <p class="mt-2 text-slate-600 text-sm">社区版本没有现代化的用户管理中心，无法满足多团队协作。</p>
+        </div>
+      </div>
+      <div class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-rose-50">
+          <i class="ri-key-2-line text-2xl text-rose-500"></i>
+        </div>
+        <div>
+          <h3 class="font-medium text-slate-900">无法对接统一认证</h3>
+          <p class="mt-2 text-slate-600 text-sm">需要接入 OIDC/OAuth2 体系，实现统一身份认证与单点登录。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="max-w-7xl mx-auto px-6 py-16 bg-sand-50 rounded-2xl" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">成果展示：我们实现了什么</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">来自实战项目的四大核心能力。</p>
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div class="space-y-6">
+        <div class="card flex items-start gap-4">
+          <div class="icon-box bg-cyan-50">
+            <i class="ri-user-settings-line text-2xl text-cyan-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">独立用户管理中心</h3>
+            <p class="mt-2 text-slate-600 text-sm">集中化用户视图，支持用户创建、编辑、查询、禁用等完整流程。</p>
+          </div>
+        </div>
+        <div class="card flex items-start gap-4">
+          <div class="icon-box bg-amber-50">
+            <i class="ri-user-star-line text-2xl text-amber-500"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">角色与权限指派</h3>
+            <p class="mt-2 text-slate-600 text-sm">自定义角色，精确到模型、实例、业务与功能级别的增删改查权限。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="card flex items-start gap-4">
+          <div class="icon-box bg-rose-50">
+            <i class="ri-shield-keyhole-line text-2xl text-rose-500"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">OIDC 单点登录</h3>
+            <p class="mt-2 text-slate-600 text-sm">无缝对接企业统一身份认证服务，支持 Authing、Okta 等。</p>
+          </div>
+        </div>
+        <div class="card flex items-start gap-4">
+          <div class="icon-box bg-slate-100">
+            <i class="ri-layout-masonry-line text-2xl text-slate-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">全新前端交互</h3>
+            <p class="mt-2 text-slate-600 text-sm">从头打造 Vue 管理界面，交互流畅，逻辑清晰。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="architecture" class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">技术揭秘：如何做到</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">贯穿后端、前端与部署的深度定制。</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="arch-card">
+        <div class="arch-step">1</div>
+        <h4 class="font-medium text-slate-900 mt-4">后端 Golang</h4>
+        <p class="mt-2 text-slate-600 text-sm">新增完整 User Management 模块与核心 API，重构登录流程。</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-code-box-line"></i>
+          <span>2000+ 行核心逻辑</span>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-step">2</div>
+        <h4 class="font-medium text-slate-900 mt-4">前端 Vue.js</h4>
+        <p class="mt-2 text-slate-600 text-sm">新建用户管理模块、角色管理与权限配置组件。</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-layout-3-line"></i>
+          <span>7 个核心组件</span>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-step">3</div>
+        <h4 class="font-medium text-slate-900 mt-4">OIDC 对接</h4>
+        <p class="mt-2 text-slate-600 text-sm">新增独立认证服务，支持多登录模式与统一认证。</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-shield-keyhole-line"></i>
+          <span>Authing / Okta</span>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-step">4</div>
+        <h4 class="font-medium text-slate-900 mt-4">Helm 部署</h4>
+        <p class="mt-2 text-slate-600 text-sm">更新配置与 Chart，确保新服务在 K8S 环境顺利上线。</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-ship-2-line"></i>
+          <span>容器化交付</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="case" class="max-w-7xl mx-auto px-6 py-16 bg-sand-50 rounded-2xl" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">案例文章引用</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">引用自文章《蓝鲸CMDB深度定制》中的核心内容。</p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="demo-card">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="ri-article-line text-3xl text-cyan-500"></i>
+          <span class="text-slate-700 font-medium">完整案例</span>
+        </div>
+        <p class="text-slate-600 text-sm mb-4">从痛点、成果到技术实现，完整记录深度定制过程。</p>
+        <a href="https://junxinzhang.com/bk-cmdb/" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 transition">
+          <i class="ri-book-open-line"></i> 阅读原文
+        </a>
+      </div>
+      <div class="demo-card">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="ri-git-repository-line text-3xl text-amber-500"></i>
+          <span class="text-slate-700 font-medium">定制仓库</span>
+        </div>
+        <p class="text-slate-600 text-sm mb-4">所有代码与改造细节均在定制仓库中维护。</p>
+        <a href="https://github.com/junxinzhang/bk-cmdb" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 text-white rounded-md hover:bg-amber-600 transition">
+          <i class="ri-code-s-slash-line"></i> 打开仓库
+        </a>
+      </div>
+      <div class="demo-card">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="ri-chat-1-line text-3xl text-slate-800"></i>
+          <span class="text-slate-700 font-medium">咨询合作</span>
+        </div>
+        <p class="text-slate-600 text-sm mb-4">如需定制开发或技术咨询，可直接联系作者。</p>
+        <a href="#contact"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition">
+          <i class="ri-mail-line"></i> 联系方式
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-3 gap-6">
+      <div class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span class="text-slate-700 font-medium">安全可控</span>
+        </div>
+        <p class="text-slate-600 text-sm">遵循最小权限原则，降低误操作与越权风险。</p>
+      </div>
+      <div class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="ri-speed-line text-xl text-amber-500"></i>
+          <span class="text-slate-700 font-medium">效率提升</span>
+        </div>
+        <p class="text-slate-600 text-sm">管理员从繁琐配置中解放，权限流程更清晰。</p>
+      </div>
+      <div class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="ri-link-m text-xl text-cyan-500"></i>
+          <span class="text-slate-700 font-medium">统一认证</span>
+        </div>
+        <p class="text-slate-600 text-sm">与企业认证体系对接，实现统一审计与登录体验。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-10">技术栈</h2>
+    <div class="flex flex-wrap justify-center gap-6">
+      <div class="tech-badge">
+        <i class="ri-golang-line text-cyan-600"></i>
+        <span>Golang</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-layout-3-line text-amber-600"></i>
+        <span>Vue.js</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-shield-keyhole-line text-slate-700"></i>
+        <span>OIDC / OAuth2</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-database-2-fill text-cyan-500"></i>
+        <span>MongoDB</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-ship-2-line text-slate-700"></i>
+        <span>Helm / Kubernetes</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up" itemscope itemtype="https://schema.org/FAQPage">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">常见问题</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">关于深度定制与交付方式的常见问题。</p>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" open>
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-cyan-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">这套权限系统包含哪些核心模块？</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            包含独立用户管理中心、角色与权限配置、OIDC 登录集成，以及全新的 Vue 管理界面。
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-cyan-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">是否支持企业内部认证体系？</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            支持。基于 OIDC/OAuth2，可对接 Authing、Okta 等统一认证服务。
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-cyan-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">这套定制基于什么版本？</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            原厂参考：<a href="https://github.com/TencentBlueKing/bk-cmdb" target="_blank" rel="noopener">https://github.com/TencentBlueKing/bk-cmdb</a>。
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-cyan-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">如何合作或获取定制支持？</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            可以通过邮件或微信联系，提供需求说明即可开始评估。
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="contact" class="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-r from-cyan-600 to-amber-500 rounded-2xl text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-white mb-6">立即开启深度定制</h2>
+    <p class="text-amber-50 mb-8 max-w-xl mx-auto">如果你需要企业级权限体系、统一认证或功能扩展，欢迎联系。</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:jason2023zhang@gmail.com"
+         class="px-8 py-4 bg-white text-cyan-600 rounded-md text-lg shadow-lg hover:bg-slate-50 transition inline-flex items-center justify-center gap-2">
+        <i class="ri-mail-line"></i> 邮件咨询
+      </a>
+      <a href="https://junxinzhang.com" target="_blank" rel="noopener"
+         class="px-8 py-4 border-2 border-white text-white rounded-md text-lg hover:bg-white/10 transition inline-flex items-center justify-center gap-2">
+        <i class="ri-earth-line"></i> 访问博客
+      </a>
+    </div>
+    <div class="mt-6 text-sm text-amber-50/90">微信：winnielove2020</div>
+  </section>
+</main>
+
+<footer class="bg-slate-900 mt-16">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-slate-400">
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="flex gap-1">
+          <span class="w-3 h-3 rounded-sm bg-amber-400"></span>
+          <span class="w-3 h-3 rounded-sm bg-cyan-400"></span>
+        </div>
+        <span class="text-white font-semibold">蓝鲸CMDB深度定制</span>
+      </div>
+      <p class="text-sm">以用户权限与认证为核心的 CMDB 深度定制方案。</p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-white mb-4">核心能力</h3>
+      <ul class="space-y-2 text-sm">
+        <li>用户管理中心</li>
+        <li>角色权限体系</li>
+        <li>OIDC 单点登录</li>
+        <li>Vue 管理界面</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold text-white mb-4">资源入口</h3>
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-center gap-2">
+          <i class="ri-article-line text-cyan-300"></i>
+          <a href="https://junxinzhang.com/bk-cmdb/" target="_blank" rel="noopener" class="hover:text-cyan-300 transition">案例文章</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <i class="ri-git-repository-line text-cyan-300"></i>
+          <a href="https://github.com/junxinzhang/bk-cmdb" target="_blank" rel="noopener" class="hover:text-cyan-300 transition">定制仓库</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold text-white mb-4">关注我们</h3>
+      <div class="flex items-center gap-4 text-2xl mb-4">
+        <a href="https://github.com/junxinzhang" target="_blank" rel="noopener" class="hover:text-cyan-300 transition" title="GitHub">
+          <i class="ri-github-fill"></i>
+        </a>
+        <a href="https://junxinzhang.com" target="_blank" rel="noopener" class="hover:text-cyan-300 transition" title="博客">
+          <i class="ri-earth-line"></i>
+        </a>
+        <a href="mailto:jason2023zhang@gmail.com" class="hover:text-cyan-300 transition" title="邮箱">
+          <i class="ri-mail-line"></i>
+        </a>
+        <a href="https://x.com/Jasonz9788" target="_blank" rel="noopener" class="hover:text-cyan-300 transition" title="Twitter/X">
+          <i class="ri-twitter-x-line"></i>
+        </a>
+        <div class="group relative">
+          <i class="ri-wechat-line hover:text-cyan-300 cursor-pointer" title="微信公众号"></i>
+          <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-36 bg-white border border-gray-200 rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+            <img src="assets/JustJason_wechat-qrcode.jpg" alt="微信公众号二维码" class="w-full h-auto rounded" />
+            <p class="text-xs text-center text-slate-600 mt-1">扫码关注公众号</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-slate-500">扫码关注获取更多技术分享</p>
+    </div>
+  </div>
+  <div class="text-center text-sm text-slate-600 py-4 border-t border-slate-800">
+    &copy; <span id="copyright-year">2025</span> Jason Zhang. 蓝鲸CMDB深度定制.
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
