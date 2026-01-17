@@ -1,9 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Chinese Homepage (Default) -->
   <url>
     <loc>https://cmdb.junxinzhang.com/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+
+    <!-- Alternate language versions -->
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cmdb.junxinzhang.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cmdb.junxinzhang.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cmdb.junxinzhang.com/" />
+
+    <!-- Images on this page -->
+    <image:image>
+      <image:loc>https://cmdb.junxinzhang.com/assets/screenshot.png</image:loc>
+      <image:title>蓝鲸CMDB深度定制界面截图 - 用户管理中心</image:title>
+      <image:caption>BlueKing CMDB深度定制的用户管理界面，展示独立用户管理中心功能</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cmdb.junxinzhang.com/assets/screenshot01.png</image:loc>
+      <image:title>蓝鲸CMDB深度定制界面截图 - 角色权限配置</image:title>
+      <image:caption>BlueKing CMDB深度定制的角色权限配置界面，展示RBAC精细化权限控制</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cmdb.junxinzhang.com/assets/logo.png</image:loc>
+      <image:title>蓝鲸CMDB Logo</image:title>
+      <image:caption>BlueKing CMDB配置平台标志</image:caption>
+    </image:image>
   </url>
+
+  <!-- English Homepage -->
+  <url>
+    <loc>https://cmdb.junxinzhang.com/en/</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+
+    <!-- Alternate language versions -->
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cmdb.junxinzhang.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cmdb.junxinzhang.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cmdb.junxinzhang.com/" />
+
+    <!-- Images on this page -->
+    <image:image>
+      <image:loc>https://cmdb.junxinzhang.com/assets/screenshot.png</image:loc>
+      <image:title>BlueKing CMDB Customization Interface - User Management Center</image:title>
+      <image:caption>BlueKing CMDB deep customization user management interface showcasing independent user management center</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cmdb.junxinzhang.com/assets/screenshot01.png</image:loc>
+      <image:title>BlueKing CMDB Customization Interface - Role Permission Configuration</image:title>
+      <image:caption>BlueKing CMDB deep customization role permission configuration interface demonstrating RBAC fine-grained access control</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cmdb.junxinzhang.com/assets/logo.png</image:loc>
+      <image:title>BlueKing CMDB Logo</image:title>
+      <image:caption>BlueKing CMDB Configuration Platform Logo</image:caption>
+    </image:image>
+  </url>
+
 </urlset>

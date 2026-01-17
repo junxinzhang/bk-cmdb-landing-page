@@ -1,18 +1,188 @@
-# Robots.txt for BK-CMDB Custom Landing Page
+# Robots.txt for BlueKing CMDB Custom Landing Page
+# https://cmdb.junxinzhang.com/
+# Last updated: 2025-01-18
 
+# Default rules for all crawlers
 User-agent: *
 Allow: /
+Allow: /en/
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Disallow: /.git/
+Disallow: /.github/
 
+# Sitemap location
 Sitemap: https://cmdb.junxinzhang.com/sitemap.xml
 
-User-agent: GPTBot
+# ===========================================
+# Search Engine Crawlers
+# ===========================================
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /assets/
+
+User-agent: Googlebot-Video
 Allow: /
 
+# Google Extended (for Bard/Gemini training)
 User-agent: Google-Extended
 Allow: /
 
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Baidu (Chinese search engine)
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# Yandex (Russian search engine)
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# ===========================================
+# AI/LLM Crawlers (GEO Optimization)
+# ===========================================
+
+# OpenAI GPT
+User-agent: GPTBot
+Allow: /
+
+# OpenAI ChatGPT plugins
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Common Crawl (used by many AI projects)
 User-agent: CCBot
 Allow: /
 
-User-agent: anthropic-ai
+# Cohere AI
+User-agent: cohere-ai
 Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# Microsoft Copilot / Bing Chat
+User-agent: Copilot
+Allow: /
+
+# YouChat
+User-agent: YouBot
+Allow: /
+
+# Neeva AI
+User-agent: NeevaBot
+Allow: /
+
+# AI2 (Allen Institute for AI)
+User-agent: ai2-bot
+Allow: /
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+
+# Applebot (Siri)
+User-agent: Applebot
+Allow: /
+
+# Semrush
+User-agent: SemrushBot
+Allow: /
+
+# Ahrefs
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 5
+
+# ===========================================
+# Social Media Crawlers
+# ===========================================
+
+# Twitter/X
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# Telegram
+User-agent: TelegramBot
+Allow: /
+
+# Slack
+User-agent: Slackbot
+Allow: /
+
+# Discord
+User-agent: Discordbot
+Allow: /
+
+# WhatsApp
+User-agent: WhatsApp
+Allow: /
+
+# Pinterest
+User-agent: Pinterest
+Allow: /
+
+# ===========================================
+# Archive and Research Bots
+# ===========================================
+
+# Internet Archive
+User-agent: ia_archiver
+Allow: /
+
+# Archive.org
+User-agent: archive.org_bot
+Allow: /
+
+# ===========================================
+# Host metadata
+# ===========================================
+Host: https://cmdb.junxinzhang.com

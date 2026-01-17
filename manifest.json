@@ -1,15 +1,19 @@
 {
-  "name": "蓝鲸CMDB深度定制",
+  "name": "蓝鲸CMDB深度定制 | BlueKing CMDB Customization",
   "short_name": "CMDB定制",
-  "description": "基于蓝鲸CMDB的深度定制方案：独立用户管理中心、精细化角色权限、OIDC 单点登录与全新 Vue 管理界面。",
+  "description": "专业的蓝鲸CMDB深度定制服务：独立用户管理中心、精细化RBAC角色权限、OIDC/OAuth2单点登录集成、全新Vue.js管理界面。Professional BlueKing CMDB customization service with enterprise-grade permission management and OIDC SSO.",
   "start_url": "/",
+  "id": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
   "background_color": "#0b1220",
   "theme_color": "#0b1220",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "zh-CN",
-  "categories": ["business", "productivity", "utilities"],
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities", "developer tools"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
   "icons": [
     {
       "src": "assets/favicon.png",
@@ -22,6 +26,12 @@
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "assets/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "screenshots": [
@@ -30,9 +40,44 @@
       "sizes": "1200x800",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "蓝鲸CMDB深度定制界面"
+      "label": "蓝鲸CMDB深度定制界面 - 用户管理中心"
+    },
+    {
+      "src": "assets/screenshot01.png",
+      "sizes": "1200x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "蓝鲸CMDB深度定制界面 - 角色权限配置"
     }
   ],
-  "related_applications": [],
-  "prefer_related_applications": false
+  "shortcuts": [
+    {
+      "name": "查看案例",
+      "short_name": "案例",
+      "description": "阅读完整的蓝鲸CMDB定制案例",
+      "url": "https://junxinzhang.com/bk-cmdb/",
+      "icons": [{ "src": "assets/icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "GitHub仓库",
+      "short_name": "仓库",
+      "description": "查看定制仓库源码",
+      "url": "https://github.com/junxinzhang/bk-cmdb",
+      "icons": [{ "src": "assets/icon.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://cmdb.junxinzhang.com/manifest.json"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
+  "handle_links": "preferred",
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
 }

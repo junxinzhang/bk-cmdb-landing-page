@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Primary Meta Tags -->
+  <title>BlueKing CMDB Customization | Enterprise RBAC Permission & OIDC SSO Solution</title>
+  <meta name="title" content="BlueKing CMDB Customization | Enterprise RBAC Permission & OIDC SSO Solution" />
+  <meta name="description" content="Professional BlueKing CMDB deep customization service: Independent user management center, fine-grained RBAC role permissions, OIDC/OAuth2 single sign-on integration, modern Vue.js admin interface. Kubernetes/Helm deployment ready." />
+  <meta name="keywords" content="BlueKing CMDB, CMDB customization, permission management, RBAC, OIDC, OAuth2, SSO, single sign-on, role management, user management, Vue.js, Golang, Kubernetes, Helm, IT asset management, configuration management, ITIL, DevOps, enterprise software" />
+  <meta name="author" content="Jason Zhang" />
+  <meta name="creator" content="Jason Zhang" />
+  <meta name="publisher" content="Jason Zhang" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="subject" content="BlueKing CMDB Enterprise Customization Development Service" />
+  <meta name="abstract" content="Deep customization solution for BlueKing CMDB, including user management, role permissions, OIDC authentication and enterprise-grade feature extensions." />
+  <meta name="classification" content="Business, Technology, Software Development" />
+  <meta name="category" content="IT Asset Management, Configuration Management Database, Enterprise Software Customization" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="distribution" content="global" />
+  <meta name="rating" content="general" />
+  <meta name="revisit-after" content="7 days" />
+
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.title" content="BlueKing CMDB Customization - Enterprise Permission and User Management Solution" />
+  <meta name="DC.creator" content="Jason Zhang" />
+  <meta name="DC.subject" content="CMDB; Configuration Management; Permission Management; OIDC; Enterprise Software" />
+  <meta name="DC.description" content="Enterprise-grade deep customization solution for BlueKing CMDB, providing independent user management, fine-grained permission control, OIDC single sign-on." />
+  <meta name="DC.publisher" content="Jason Zhang" />
+  <meta name="DC.type" content="Service" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="en" />
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="CN" />
+  <meta name="geo.placename" content="China" />
+
+  <!-- Canonical & Alternate Languages -->
+  <link rel="canonical" href="https://cmdb.junxinzhang.com/en/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://cmdb.junxinzhang.com/" />
+  <link rel="alternate" hreflang="en" href="https://cmdb.junxinzhang.com/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://cmdb.junxinzhang.com/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cmdb.junxinzhang.com/en/" />
+  <meta property="og:site_name" content="BlueKing CMDB Customization" />
+  <meta property="og:title" content="BlueKing CMDB Customization | Enterprise RBAC Permission & OIDC SSO Solution" />
+  <meta property="og:description" content="Professional BlueKing CMDB customization: Independent user management, fine-grained RBAC permissions, OIDC/OAuth2 SSO integration, modern Vue.js interface." />
+  <meta property="og:image" content="https://cmdb.junxinzhang.com/assets/screenshot.png" />
+  <meta property="og:image:secure_url" content="https://cmdb.junxinzhang.com/assets/screenshot.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="BlueKing CMDB Customization Interface - User Management and Permission Configuration" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <meta property="article:author" content="Jason Zhang" />
+  <meta property="article:publisher" content="https://junxinzhang.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Jasonz9788" />
+  <meta name="twitter:creator" content="@Jasonz9788" />
+  <meta name="twitter:title" content="BlueKing CMDB Customization | Enterprise Permission Solution" />
+  <meta name="twitter:description" content="Professional CMDB customization: Independent user management, RBAC permissions, OIDC SSO, Vue.js interface. Kubernetes deployment ready." />
+  <meta name="twitter:image" content="https://cmdb.junxinzhang.com/assets/screenshot.png" />
+  <meta name="twitter:image:alt" content="BlueKing CMDB Customization Screenshot" />
+
+  <!-- LinkedIn -->
+  <meta property="linkedin:owner" content="Jason Zhang" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/icon.png" />
+  <link rel="manifest" href="../manifest.json" />
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="../assets/screenshot.png" as="image" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+
+  <!-- Structured Data: Comprehensive Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://junxinzhang.com/#organization",
+        "name": "Jason Zhang - Software Development",
+        "alternateName": ["JustJason", "Jason Zhang Tech"],
+        "url": "https://junxinzhang.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cmdb.junxinzhang.com/assets/logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://github.com/junxinzhang",
+          "https://x.com/Jasonz9788"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "jason2023zhang@gmail.com",
+          "contactType": "customer service",
+          "availableLanguage": ["Chinese", "English"]
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://junxinzhang.com/#person",
+        "name": "Jason Zhang",
+        "alternateName": "JustJason",
+        "url": "https://junxinzhang.com",
+        "jobTitle": "Software Engineer",
+        "knowsAbout": ["CMDB", "Golang", "Vue.js", "Kubernetes", "OIDC", "DevOps"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://cmdb.junxinzhang.com/#website",
+        "url": "https://cmdb.junxinzhang.com/",
+        "name": "BlueKing CMDB Customization",
+        "description": "Professional BlueKing CMDB deep customization service with enterprise-grade permission management and OIDC SSO",
+        "publisher": { "@id": "https://junxinzhang.com/#organization" },
+        "inLanguage": ["en", "zh-CN"]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://cmdb.junxinzhang.com/en/#webpage",
+        "url": "https://cmdb.junxinzhang.com/en/",
+        "name": "BlueKing CMDB Customization | Enterprise RBAC Permission & OIDC SSO Solution",
+        "description": "Professional BlueKing CMDB deep customization service: Independent user management center, fine-grained RBAC role permissions, OIDC/OAuth2 single sign-on",
+        "isPartOf": { "@id": "https://cmdb.junxinzhang.com/#website" },
+        "about": { "@id": "https://cmdb.junxinzhang.com/#software" },
+        "author": { "@id": "https://junxinzhang.com/#person" },
+        "inLanguage": "en",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-01-18",
+        "breadcrumb": { "@id": "https://cmdb.junxinzhang.com/en/#breadcrumb" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cmdb.junxinzhang.com/en/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cmdb.junxinzhang.com/en/"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://cmdb.junxinzhang.com/#software",
+        "name": "BlueKing CMDB Custom Edition",
+        "alternateName": "蓝鲸CMDB深度定制",
+        "description": "Enterprise-grade deep customization of BlueKing CMDB with independent user management center, fine-grained RBAC role permissions, OIDC/OAuth2 SSO integration, modern Vue.js admin interface",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "IT Asset Management",
+        "operatingSystem": "Web, Linux, Kubernetes",
+        "softwareVersion": "3.x",
+        "featureList": [
+          "Independent User Management Center - Centralized user view with full CRUD operations",
+          "Fine-grained RBAC Role Permissions - Custom roles with model, instance, and business-level control",
+          "OIDC/OAuth2 Single Sign-On - Support for Authing, Okta, Azure AD",
+          "Modern Vue.js Admin Interface - Rebuilt from scratch with improved UX",
+          "Golang Backend Service Extensions - 2000+ lines of core business logic",
+          "Helm/Kubernetes Deployment Support - Container-ready delivery"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "author": { "@id": "https://junxinzhang.com/#person" },
+        "keywords": ["CMDB", "BlueKing", "Permission Management", "OIDC", "RBAC", "Kubernetes"],
+        "programmingLanguage": ["Golang", "JavaScript", "Vue.js"],
+        "codeRepository": "https://github.com/junxinzhang/bk-cmdb"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://cmdb.junxinzhang.com/#service",
+        "name": "BlueKing CMDB Customization Service",
+        "description": "Enterprise-grade deep customization development service for BlueKing CMDB, including user management, permission control, OIDC integration, and UI redesign",
+        "serviceType": "Software Development",
+        "provider": { "@id": "https://junxinzhang.com/#organization" },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Worldwide"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "CMDB Customization Service Catalog",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "User Management Center Customization",
+                "description": "Independent user management module development with full CRUD and status management"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "RBAC Permission System Customization",
+                "description": "Fine-grained role permission control at model, instance, and business levels"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "OIDC/SSO Integration",
+                "description": "Enterprise unified authentication integration with Authing, Okta, Azure AD"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Frontend Interface Redesign",
+                "description": "Modern Vue.js admin interface development"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://cmdb.junxinzhang.com/en/#howto",
+        "name": "How to Implement BlueKing CMDB Deep Customization",
+        "description": "Complete customization development workflow from backend to frontend",
+        "totalTime": "PT720H",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Backend Golang Development",
+            "text": "Add complete User Management module with core APIs and refactor authentication flow. Contains 2000+ lines of core business logic."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Frontend Vue.js Development",
+            "text": "Create user management module, role management, and permission configuration components. Includes 7 core business components."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "OIDC Authentication Integration",
+            "text": "Add independent authentication service supporting multiple login modes and unified authentication. Compatible with Authing, Okta."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Helm Deployment Configuration",
+            "text": "Update configurations and Charts to ensure smooth deployment in Kubernetes environments."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What core modules does this permission system include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It includes an independent user management center, role and permission configuration, OIDC login integration, and a completely new Vue admin interface. The user management center supports complete user lifecycle including creation, editing, querying, and disabling. Role permissions can be fine-tuned to model, instance, business, and feature-level CRUD control."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it support enterprise internal authentication systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Based on OIDC/OAuth2 protocols, it can integrate with mainstream unified authentication services like Authing, Okta, and Azure AD, enabling enterprise-grade single sign-on (SSO) and unified identity authentication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What version of BlueKing CMDB is this customization based on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Based on Tencent BlueKing CMDB Community Edition 3.x for deep customization. Original repository: https://github.com/TencentBlueKing/bk-cmdb"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I collaborate or get customization support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can contact via email (jason2023zhang@gmail.com) or WeChat (winnielove2020) with your requirements for evaluation. We support custom development, technical consulting, and deployment assistance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What deployment methods are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We support Kubernetes/Helm containerized deployment as well as traditional physical or virtual machine deployment. Complete Helm Charts and deployment documentation are provided."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the technology stack?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Backend is developed with Golang, frontend uses Vue.js 2.7, database is MongoDB with Redis caching support. Authentication uses OIDC/OAuth2 protocols, and deployment supports Kubernetes and Helm."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="antialiased">
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-700">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10">
+        <img src="../assets/logo.png" alt="BK-CMDB Logo" class="h-6 w-6" loading="eager" />
+      </div>
+      <div class="text-xl font-bold text-white">BlueKing CMDB Custom</div>
+    </div>
+    <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300" role="navigation" aria-label="Main navigation">
+      <a href="#pain" class="hover:text-cyan-300 transition">Pain Points</a>
+      <a href="#features" class="hover:text-cyan-300 transition">Features</a>
+      <a href="#architecture" class="hover:text-cyan-300 transition">Tech Stack</a>
+      <a href="#case" class="hover:text-cyan-300 transition">Case Study</a>
+      <a href="#faq" class="hover:text-cyan-300 transition">FAQ</a>
+      <a href="../" class="text-slate-400 hover:text-white transition">中文</a>
+      <a href="#contact" class="px-4 py-2 border border-cyan-400 text-cyan-300 rounded-md hover:bg-cyan-500/10 transition">Contact</a>
+    </nav>
+
+    <button id="menu-btn" class="mobile-menu-btn md:hidden" aria-label="Open navigation menu" aria-expanded="false">
+      <i class="ri-menu-line text-xl text-white"></i>
+    </button>
+
+    <div id="mobile-nav" class="mobile-nav md:hidden text-slate-300 text-sm" role="navigation" aria-label="Mobile navigation">
+      <a href="#pain">Pain Points</a>
+      <a href="#features">Features</a>
+      <a href="#architecture">Tech Stack</a>
+      <a href="#case">Case Study</a>
+      <a href="#faq">FAQ</a>
+      <a href="../">中文版</a>
+      <a href="#contact" class="text-cyan-300 font-medium">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero Section -->
+  <section class="w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right" class="order-2 lg:order-1">
+        <div class="badge inline-block animate-slide-in">Enterprise-Grade Permission System</div>
+        <h1 class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold hero-gradient leading-tight">
+          Make BlueKing CMDB More Secure & User-Friendly
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed">
+          Deep customization for enterprise scenarios: Independent user management center, RBAC role permissions, OIDC single sign-on, and a modern Vue.js admin interface for more precise and efficient configuration management.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row flex-wrap gap-4">
+          <a href="https://junxinzhang.com/bk-cmdb/" target="_blank" rel="noopener"
+             class="px-6 py-3 rounded-md bg-cyan-500 text-white shadow-lg hover:bg-cyan-600 transition text-center">
+             Read Full Case Study
+          </a>
+          <a href="https://github.com/junxinzhang/bk-cmdb" target="_blank" rel="noopener"
+             class="px-6 py-3 rounded-md border border-slate-600 text-slate-200 hover:bg-slate-700/50 transition flex items-center gap-2 justify-center">
+             <i class="ri-github-line"></i> View Repository
+          </a>
+        </div>
+
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-cyan-300">User Center</div>
+            <div class="text-xs text-slate-400 mt-1">Independent</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-amber-400">RBAC</div>
+            <div class="text-xs text-slate-400 mt-1">Fine-Grained</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-cyan-300">OIDC</div>
+            <div class="text-xs text-slate-400 mt-1">SSO Ready</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-amber-400">Vue.js</div>
+            <div class="text-xs text-slate-400 mt-1">Modern UI</div>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-left" class="order-1 lg:order-2">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-amber-400/20 to-coral-400/20 rounded-2xl blur-xl"></div>
+          <div class="hero-orbit"></div>
+
+          <div class="screenshot-carousel relative">
+            <div class="carousel-wrapper">
+              <img src="../assets/screenshot.png"
+                   alt="BlueKing CMDB Customization Interface - User Management Center"
+                   width="900"
+                   height="600"
+                   loading="eager"
+                   fetchpriority="high"
+                   class="carousel-image active relative rounded-xl shadow-2xl border border-slate-700 w-full max-w-xl mx-auto"
+                   itemprop="image">
+              <img src="../assets/screenshot01.png"
+                   alt="BlueKing CMDB Customization Interface - Role Permission Configuration"
+                   width="900"
+                   height="600"
+                   loading="eager"
+                   class="carousel-image relative rounded-xl shadow-2xl border border-slate-700 w-full max-w-xl mx-auto">
+            </div>
+
+            <button class="carousel-btn carousel-prev" aria-label="Previous screenshot">
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+            <button class="carousel-btn carousel-next" aria-label="Next screenshot">
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+
+            <div class="carousel-indicators">
+              <button class="carousel-indicator active" aria-label="Screenshot 1"></button>
+              <button class="carousel-indicator" aria-label="Screenshot 2"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points Section -->
+  <section id="pain" class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center">Common Challenges You May Face</h2>
+    <p class="text-slate-600 text-center mt-4 max-w-2xl mx-auto">Real pain points from production environments that drove this deep customization.</p>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <article class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-amber-50">
+          <i class="ri-shield-user-line text-2xl text-amber-500"></i>
+        </div>
+        <div>
+          <h3 class="font-medium text-slate-900">Coarse Permission Granularity</h3>
+          <p class="mt-2 text-slate-600 text-sm">Default single-user setup with no fine-grained permissions makes enterprise security compliance difficult to achieve.</p>
+        </div>
+      </article>
+      <article class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-cyan-50">
+          <i class="ri-team-line text-2xl text-cyan-600"></i>
+        </div>
+        <div>
+          <h3 class="font-medium text-slate-900">No User & Role Management</h3>
+          <p class="mt-2 text-slate-600 text-sm">Community edition lacks modern user management center, unable to support multi-team collaboration scenarios.</p>
+        </div>
+      </article>
+      <article class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-rose-50">
+          <i class="ri-key-2-line text-2xl text-rose-500"></i>
+        </div>
+        <div>
+          <h3 class="font-medium text-slate-900">No Unified Authentication</h3>
+          <p class="mt-2 text-slate-600 text-sm">Need to integrate with OIDC/OAuth2 systems for unified identity authentication and single sign-on.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="max-w-7xl mx-auto px-6 py-16 bg-sand-50 rounded-2xl" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">What We Deliver</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">Four core capabilities from real-world implementation.</p>
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div class="space-y-6">
+        <article class="card flex items-start gap-4">
+          <div class="icon-box bg-cyan-50">
+            <i class="ri-user-settings-line text-2xl text-cyan-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">Independent User Management Center</h3>
+            <p class="mt-2 text-slate-600 text-sm">Centralized user view with complete lifecycle management: create, edit, query, disable, and more.</p>
+          </div>
+        </article>
+        <article class="card flex items-start gap-4">
+          <div class="icon-box bg-amber-50">
+            <i class="ri-user-star-line text-2xl text-amber-500"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">Role & Permission Assignment</h3>
+            <p class="mt-2 text-slate-600 text-sm">Custom roles with precise CRUD permissions at model, instance, business, and feature levels.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="space-y-6">
+        <article class="card flex items-start gap-4">
+          <div class="icon-box bg-rose-50">
+            <i class="ri-shield-keyhole-line text-2xl text-rose-500"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">OIDC Single Sign-On</h3>
+            <p class="mt-2 text-slate-600 text-sm">Seamless integration with enterprise unified authentication services like Authing, Okta, and Azure AD.</p>
+          </div>
+        </article>
+        <article class="card flex items-start gap-4">
+          <div class="icon-box bg-slate-100">
+            <i class="ri-layout-masonry-line text-2xl text-slate-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">Modern Frontend Experience</h3>
+            <p class="mt-2 text-slate-600 text-sm">Completely rebuilt Vue.js admin interface with smooth interactions and clear logic.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Section -->
+  <section id="architecture" class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">Technical Deep Dive</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">End-to-end customization spanning backend, frontend, and deployment.</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <article class="arch-card">
+        <div class="arch-step">1</div>
+        <h4 class="font-medium text-slate-900 mt-4">Backend Golang</h4>
+        <p class="mt-2 text-slate-600 text-sm">New User Management module with core APIs and refactored authentication flow.</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-code-box-line"></i>
+          <span>2000+ lines of core logic</span>
+        </div>
+      </article>
+      <article class="arch-card">
+        <div class="arch-step">2</div>
+        <h4 class="font-medium text-slate-900 mt-4">Frontend Vue.js</h4>
+        <p class="mt-2 text-slate-600 text-sm">User management module, role management, and permission configuration components.</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-layout-3-line"></i>
+          <span>7 core components</span>
+        </div>
+      </article>
+      <article class="arch-card">
+        <div class="arch-step">3</div>
+        <h4 class="font-medium text-slate-900 mt-4">OIDC Integration</h4>
+        <p class="mt-2 text-slate-600 text-sm">Independent authentication service with multi-login mode and unified auth support.</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-shield-keyhole-line"></i>
+          <span>Authing / Okta / Azure AD</span>
+        </div>
+      </article>
+      <article class="arch-card">
+        <div class="arch-step">4</div>
+        <h4 class="font-medium text-slate-900 mt-4">Helm Deployment</h4>
+        <p class="mt-2 text-slate-600 text-sm">Updated configs and Charts for smooth Kubernetes deployment.</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-ship-2-line"></i>
+          <span>Container-ready</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Case Study Section -->
+  <section id="case" class="max-w-7xl mx-auto px-6 py-16 bg-sand-50 rounded-2xl" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">Resources & Case Study</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">Referenced from the comprehensive BlueKing CMDB customization article.</p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <article class="demo-card">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="ri-article-line text-3xl text-cyan-500"></i>
+          <span class="text-slate-700 font-medium">Full Case Study</span>
+        </div>
+        <p class="text-slate-600 text-sm mb-4">Complete documentation covering pain points, deliverables, and technical implementation.</p>
+        <a href="https://junxinzhang.com/bk-cmdb/" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 transition">
+          <i class="ri-book-open-line"></i> Read Article
+        </a>
+      </article>
+      <article class="demo-card">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="ri-git-repository-line text-3xl text-amber-500"></i>
+          <span class="text-slate-700 font-medium">Custom Repository</span>
+        </div>
+        <p class="text-slate-600 text-sm mb-4">All source code and modification details maintained in the custom fork.</p>
+        <a href="https://github.com/junxinzhang/bk-cmdb" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 text-white rounded-md hover:bg-amber-600 transition">
+          <i class="ri-code-s-slash-line"></i> Open Repository
+        </a>
+      </article>
+      <article class="demo-card">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="ri-chat-1-line text-3xl text-slate-800"></i>
+          <span class="text-slate-700 font-medium">Consultation</span>
+        </div>
+        <p class="text-slate-600 text-sm mb-4">Need custom development or technical consulting? Contact directly.</p>
+        <a href="#contact"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition">
+          <i class="ri-mail-line"></i> Get in Touch
+        </a>
+      </article>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-3 gap-6">
+      <article class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span class="text-slate-700 font-medium">Security Focused</span>
+        </div>
+        <p class="text-slate-600 text-sm">Following least-privilege principle to reduce misoperation and privilege escalation risks.</p>
+      </article>
+      <article class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="ri-speed-line text-xl text-amber-500"></i>
+          <span class="text-slate-700 font-medium">Efficiency Boost</span>
+        </div>
+        <p class="text-slate-600 text-sm">Admins freed from tedious configurations with clearer permission workflows.</p>
+      </article>
+      <article class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="ri-link-m text-xl text-cyan-500"></i>
+          <span class="text-slate-700 font-medium">Unified Authentication</span>
+        </div>
+        <p class="text-slate-600 text-sm">Integration with enterprise auth systems for unified audit and login experience.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-10">Technology Stack</h2>
+    <div class="flex flex-wrap justify-center gap-6">
+      <div class="tech-badge">
+        <i class="ri-golang-line text-cyan-600"></i>
+        <span>Golang</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-layout-3-line text-amber-600"></i>
+        <span>Vue.js</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-shield-keyhole-line text-slate-700"></i>
+        <span>OIDC / OAuth2</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-database-2-fill text-cyan-500"></i>
+        <span>MongoDB</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-ship-2-line text-slate-700"></i>
+        <span>Helm / Kubernetes</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up" itemscope itemtype="https://schema.org/FAQPage">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">Frequently Asked Questions</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">Common questions about deep customization and delivery.</p>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" open>
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-cyan-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">What core modules does this permission system include?</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            It includes an independent user management center, role and permission configuration, OIDC login integration, and a modern Vue admin interface.
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-cyan-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">Does it support enterprise authentication systems?</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            Yes. Based on OIDC/OAuth2, it integrates with unified authentication services like Authing, Okta, and Azure AD.
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-cyan-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">What version is this customization based on?</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            Original reference: <a href="https://github.com/TencentBlueKing/bk-cmdb" target="_blank" rel="noopener">https://github.com/TencentBlueKing/bk-cmdb</a>
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-cyan-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">How can I get customization support?</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            Contact via email or WeChat with your requirements to start evaluation.
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section id="contact" class="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-r from-cyan-600 to-amber-500 rounded-2xl text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-white mb-6">Start Your Customization Journey</h2>
+    <p class="text-amber-50 mb-8 max-w-xl mx-auto">Need enterprise-grade permissions, unified authentication, or feature extensions? Let's talk.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:jason2023zhang@gmail.com"
+         class="px-8 py-4 bg-white text-cyan-600 rounded-md text-lg shadow-lg hover:bg-slate-50 transition inline-flex items-center justify-center gap-2">
+        <i class="ri-mail-line"></i> Email Consultation
+      </a>
+      <a href="https://junxinzhang.com" target="_blank" rel="noopener"
+         class="px-8 py-4 border-2 border-white text-white rounded-md text-lg hover:bg-white/10 transition inline-flex items-center justify-center gap-2">
+        <i class="ri-earth-line"></i> Visit Blog
+      </a>
+    </div>
+    <div class="mt-6 text-sm text-amber-50/90">WeChat: winnielove2020</div>
+  </section>
+</main>
+
+<footer class="bg-slate-900 mt-16">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-slate-400">
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="flex gap-1">
+          <span class="w-3 h-3 rounded-sm bg-amber-400"></span>
+          <span class="w-3 h-3 rounded-sm bg-cyan-400"></span>
+        </div>
+        <span class="text-white font-semibold">BlueKing CMDB Custom</span>
+      </div>
+      <p class="text-sm">User permission and authentication focused CMDB deep customization solution.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-white mb-4">Core Features</h3>
+      <ul class="space-y-2 text-sm">
+        <li>User Management Center</li>
+        <li>RBAC Role Permissions</li>
+        <li>OIDC Single Sign-On</li>
+        <li>Vue.js Admin Interface</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold text-white mb-4">Resources</h3>
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-center gap-2">
+          <i class="ri-article-line text-cyan-300"></i>
+          <a href="https://junxinzhang.com/bk-cmdb/" target="_blank" rel="noopener" class="hover:text-cyan-300 transition">Case Study</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <i class="ri-git-repository-line text-cyan-300"></i>
+          <a href="https://github.com/junxinzhang/bk-cmdb" target="_blank" rel="noopener" class="hover:text-cyan-300 transition">Repository</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold text-white mb-4">Connect</h3>
+      <div class="flex items-center gap-4 text-2xl mb-4">
+        <a href="https://github.com/junxinzhang" target="_blank" rel="noopener" class="hover:text-cyan-300 transition" title="GitHub">
+          <i class="ri-github-fill"></i>
+        </a>
+        <a href="https://junxinzhang.com" target="_blank" rel="noopener" class="hover:text-cyan-300 transition" title="Blog">
+          <i class="ri-earth-line"></i>
+        </a>
+        <a href="mailto:jason2023zhang@gmail.com" class="hover:text-cyan-300 transition" title="Email">
+          <i class="ri-mail-line"></i>
+        </a>
+        <a href="https://x.com/Jasonz9788" target="_blank" rel="noopener" class="hover:text-cyan-300 transition" title="Twitter/X">
+          <i class="ri-twitter-x-line"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center text-sm text-slate-600 py-4 border-t border-slate-800">
+    &copy; <span id="copyright-year">2025</span> Jason Zhang. BlueKing CMDB Customization.
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

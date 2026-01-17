@@ -90,6 +90,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+  <!-- Preload Critical Resources for Performance -->
+  <link rel="preload" href="assets/screenshot.png" as="image" type="image/png" />
+  <link rel="preload" href="assets/logo.png" as="image" type="image/png" />
+  <link rel="preload" href="css/style.css" as="style" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" as="style" />
+
+  <!-- DNS Prefetch for external resources -->
+  <link rel="dns-prefetch" href="//github.com" />
+  <link rel="dns-prefetch" href="//junxinzhang.com" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
@@ -413,6 +423,98 @@
 <body class="antialiased">
 <a href="#main" class="skip-link">跳转到主要内容</a>
 
+<!-- GEO Optimization: AI-Friendly Content Summary (Accessible to crawlers, screen readers) -->
+<div class="sr-only" role="region" aria-label="页面摘要" itemscope itemtype="https://schema.org/WebPageElement">
+  <h1 itemprop="name">蓝鲸CMDB深度定制 - BlueKing CMDB Customization</h1>
+
+  <section aria-label="概述">
+    <h2>项目概述 | Project Overview</h2>
+    <p itemprop="description">
+      蓝鲸CMDB深度定制是一套面向企业级场景的配置管理数据库(CMDB)定制解决方案。
+      基于腾讯蓝鲸社区版CMDB进行深度二次开发，解决了社区版权限粒度粗、缺少用户管理、
+      无法对接统一认证等核心痛点。
+    </p>
+    <p>
+      BlueKing CMDB Customization is an enterprise-grade Configuration Management Database
+      solution based on Tencent BlueKing Community Edition. It addresses key pain points
+      including coarse permission granularity, lack of user management, and no unified
+      authentication integration.
+    </p>
+  </section>
+
+  <section aria-label="核心功能">
+    <h2>核心功能 | Core Features</h2>
+    <ul>
+      <li><strong>独立用户管理中心 (Independent User Management Center)</strong>:
+        集中化用户视图，支持用户创建、编辑、查询、禁用等完整生命周期管理。
+        Centralized user management with full CRUD operations and lifecycle management.</li>
+      <li><strong>精细化RBAC角色权限 (Fine-grained RBAC Role Permissions)</strong>:
+        自定义角色，支持模型级、实例级、业务级和功能级的增删改查权限控制。
+        Custom roles with model, instance, business and feature-level access control.</li>
+      <li><strong>OIDC/OAuth2单点登录 (OIDC/OAuth2 Single Sign-On)</strong>:
+        无缝对接企业统一身份认证，支持Authing、Okta、Azure AD等主流认证服务。
+        Seamless integration with enterprise identity providers like Authing, Okta, Azure AD.</li>
+      <li><strong>全新Vue.js管理界面 (Modern Vue.js Admin Interface)</strong>:
+        从头打造的现代化前端交互，7个核心业务组件，流畅的用户体验。
+        Rebuilt from scratch with 7 core business components and smooth UX.</li>
+    </ul>
+  </section>
+
+  <section aria-label="技术栈">
+    <h2>技术栈 | Technology Stack</h2>
+    <ul>
+      <li>后端 (Backend): Golang, go-restful framework</li>
+      <li>前端 (Frontend): Vue.js 2.7, Webpack</li>
+      <li>数据库 (Database): MongoDB</li>
+      <li>缓存 (Cache): Redis</li>
+      <li>认证 (Authentication): OIDC/OAuth2</li>
+      <li>部署 (Deployment): Kubernetes, Helm, Docker</li>
+    </ul>
+  </section>
+
+  <section aria-label="实施步骤">
+    <h2>实施步骤 | Implementation Steps</h2>
+    <ol>
+      <li><strong>后端Golang开发</strong>: 新增User Management模块，2000+行核心业务逻辑，重构认证授权流程</li>
+      <li><strong>前端Vue.js开发</strong>: 创建用户管理、角色配置、权限分配等7个核心组件</li>
+      <li><strong>OIDC认证对接</strong>: 独立认证服务，支持多登录模式与统一认证</li>
+      <li><strong>Helm部署配置</strong>: 更新Chart确保Kubernetes环境顺利上线</li>
+    </ol>
+  </section>
+
+  <section aria-label="适用场景">
+    <h2>适用场景 | Use Cases</h2>
+    <p>
+      适用于需要企业级权限管控、多团队协作、统一身份认证的IT资产配置管理场景。
+      特别适合已部署蓝鲸CMDB社区版但需要增强权限和用户管理能力的企业。
+    </p>
+    <p>
+      Suitable for IT asset configuration management scenarios requiring enterprise-grade
+      access control, multi-team collaboration, and unified identity authentication.
+      Especially for enterprises using BlueKing CMDB Community Edition needing enhanced
+      permission and user management capabilities.
+    </p>
+  </section>
+
+  <section aria-label="联系方式">
+    <h2>联系方式 | Contact</h2>
+    <p>作者 (Author): Jason Zhang</p>
+    <p>邮箱 (Email): jason2023zhang@gmail.com</p>
+    <p>微信 (WeChat): winnielove2020</p>
+    <p>GitHub: <a href="https://github.com/junxinzhang/bk-cmdb">https://github.com/junxinzhang/bk-cmdb</a></p>
+    <p>博客 (Blog): <a href="https://junxinzhang.com">https://junxinzhang.com</a></p>
+  </section>
+
+  <section aria-label="关键词">
+    <h2>关键词 | Keywords</h2>
+    <p>蓝鲸CMDB, BlueKing CMDB, CMDB定制, CMDB customization, 配置管理数据库,
+    Configuration Management Database, 权限管理, permission management, RBAC,
+    角色权限, role-based access control, OIDC, OAuth2, 单点登录, SSO, single sign-on,
+    用户管理, user management, Vue.js, Golang, Kubernetes, Helm, IT资产管理,
+    IT asset management, DevOps, 企业软件定制, enterprise software customization</p>
+  </section>
+</div>
+
 <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-700">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="flex items-center gap-3">
@@ -427,6 +529,7 @@
       <a href="#architecture" class="hover:text-cyan-300 transition">技术</a>
       <a href="#case" class="hover:text-cyan-300 transition">案例</a>
       <a href="#faq" class="hover:text-cyan-300 transition">FAQ</a>
+      <a href="en/" class="text-slate-400 hover:text-white transition" title="English Version">EN</a>
       <a href="#contact" class="px-4 py-2 border border-cyan-400 text-cyan-300 rounded-md hover:bg-cyan-500/10 transition">联系咨询</a>
     </nav>
 
@@ -440,6 +543,7 @@
       <a href="#architecture">技术</a>
       <a href="#case">案例</a>
       <a href="#faq">FAQ</a>
+      <a href="en/">English</a>
       <a href="#contact" class="text-cyan-300 font-medium">联系咨询</a>
     </div>
   </div>
