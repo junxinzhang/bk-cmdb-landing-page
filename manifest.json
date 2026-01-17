@@ -1,0 +1,38 @@
+{
+  "name": "蓝鲸CMDB深度定制",
+  "short_name": "CMDB定制",
+  "description": "基于蓝鲸CMDB的深度定制方案：独立用户管理中心、精细化角色权限、OIDC 单点登录与全新 Vue 管理界面。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "zh-CN",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "assets/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/screenshot.png",
+      "sizes": "1200x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "蓝鲸CMDB深度定制界面"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
